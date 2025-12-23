@@ -1,29 +1,13 @@
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
+    font-family: Segoe UI, Arial, sans-serif;
 }
 
 body {
-    margin: 0;
-    font-family: Segoe UI, Arial, sans-serif;
-    padding-top: 100px;
-    background: linear-gradient(-45deg, #1f4f8b, #0f2f57, #38bdf8, #0c2a4a);
-    background-size: 400% 400%;
-    animation: gradientBG 15s ease infinite;
-}
-
-
-/* Background Animation */
-
-@keyframes gradientBG {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
+    background: #f2f5fa;
+    padding-top: 120px;
 }
 
 
@@ -33,17 +17,33 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
-    z-index: 9999;
-    background: rgba(15, 47, 87, 0.95);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    z-index: 999;
+    background: linear-gradient(270deg, #0f2f57, #1f4f8b, #0f2f57);
+    background-size: 400% 400%;
+    animation: bgMove 8s ease infinite;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, .35);
 }
+
+@keyframes bgMove {
+    0% {
+        background-position: 0%
+    }
+    50% {
+        background-position: 100%
+    }
+    100% {
+        background-position: 0%
+    }
+}
+
+
+/* MAIN */
 
 .nav-main {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 12px 20px;
-    position: relative;
+    padding: 18px 45px;
 }
 
 
@@ -52,114 +52,162 @@ body {
 .logo {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
+    font-size: 26px;
+    font-weight: 700;
+    color: #fff;
 }
 
-.logo img {
-    width: 38px;
-    height: 38px;
-}
-
-.logo span {
+.logo b {
     color: #ffcc33;
-    font-size: 18px;
-    font-weight: 600;
+}
+
+.logo-icon {
+    width: 42px;
+    height: 42px;
+    fill: #ffcc33;
 }
 
 
-/* MENU - mobile hidden */
+/* MENU DESKTOP */
 
 .menu {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    width: 100%;
-    background: #0f2f57;
-    z-index: 999;
-}
-
-.menu a {
-    padding: 12px;
-    color: #fff;
-    text-align: center;
-    text-decoration: none;
-    font-size: 16px;
-}
-
-.menu a.active {
-    background: #ffcc33;
-    color: #0f2f57;
-}
-
-.menu.active {
     display: flex;
 }
 
+.menu a {
+    color: #fff;
+    margin: 0 18px;
+    text-decoration: none;
+    position: relative;
+}
 
-/* RIGHT - mobile hidden */
+.menu a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 0;
+    height: 3px;
+    background: #ffcc33;
+    transition: .3s;
+}
+
+.menu a:hover::after,
+.menu a.active::after {
+    width: 100%;
+}
+
+
+/* RIGHT */
 
 .right {
-    display: none;
+    display: flex;
+    align-items: center;
 }
 
-
-/* BUTTON */
+.search {
+    color: #fff;
+    margin-right: 18px;
+}
 
 .enroll {
-    padding: 10px 20px;
+    padding: 12px 28px;
     border: none;
-    border-radius: 6px;
+    border-radius: 8px;
     font-weight: 600;
     cursor: pointer;
-    background: linear-gradient(180deg, #ffb347, #ffcc33);
-    color: #7a3d00;
+    background: linear-gradient(#ffb347, #ffcc33);
+    box-shadow: 0 6px 18px rgba(255, 180, 60, .9);
 }
 
-.enroll:hover {
-    box-shadow: 0 6px 18px rgba(255, 180, 60, 0.9);
+
+/* BOTTOM BAR */
+
+.nav-bottom {
+    background: #0c2a4a;
+    padding: 10px 45px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.bottom-box {
+    background: rgba(255, 255, 255, .08);
+    padding: 8px 18px;
+    border-radius: 8px;
+    color: #fff;
 }
 
 
 /* HAMBURGER */
 
 .hamburger {
-    display: flex;
+    display: none;
     flex-direction: column;
-    gap: 5px;
     cursor: pointer;
+    margin-left: 15px;
 }
 
 .hamburger span {
+    width: 25px;
     height: 3px;
-    width: 28px;
     background: #fff;
-    border-radius: 2px;
-    transition: all 0.3s ease;
-}
-
-.hamburger.open span:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
-}
-
-.hamburger.open span:nth-child(2) {
-    opacity: 0;
-}
-
-.hamburger.open span:nth-child(3) {
-    transform: rotate(-45deg) translate(5px, -5px);
+    margin: 4px 0;
+    transition: .3s;
 }
 
 
-/* NAV BOTTOM */
+/* MOBILE */
 
-.nav-bottom {
-    background: #0c2a4a;
-    padding: 8px 20px;
-    text-align: center;
-    color: #fff;
-    font-size: 14px;
+@media (max-width: 768px) {
+    body {
+        padding-top: 95px;
+    }
+    .logo {
+        font-size: 18px;
+    }
+    .logo-icon {
+        width: 30px;
+        height: 30px;
+    }
+    .menu {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: #0f2f57;
+        flex-direction: column;
+        display: none;
+        animation: slideDown .4s ease;
+    }
+    .menu.active {
+        display: flex;
+    }
+    @keyframes slideDown {
+        from {
+            opacity: 0;
+            transform: translateY(-10px)
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0)
+        }
+    }
+    .menu a {
+        padding: 14px;
+        text-align: center;
+        border-bottom: 1px solid rgba(255, 255, 255, .1);
+    }
+    .search,
+    .enroll {
+        display: none;
+    }
+    .hamburger {
+        display: flex;
+    }
+    .nav-bottom {
+        padding: 8px 15px;
+    }
 }
 
 
@@ -167,45 +215,6 @@ body {
 
 .demo {
     height: 1200px;
-    padding: 20px;
-    font-size: 18px;
-    color: #fff;
-}
-
-
-/* ===== DESKTOP ===== */
-
-@media(min-width:769px) {
-    .menu {
-        display: flex;
-        flex-direction: row;
-        position: static;
-        width: auto;
-        background: none;
-    }
-    .menu a {
-        margin: 0 15px;
-        font-size: 17px;
-        background: none;
-        color: #fff;
-    }
-    .right {
-        display: flex;
-        align-items: center;
-        gap: 15px;
-    }
-    .hamburger {
-        display: none;
-    }
-    .logo img {
-        width: 42px;
-        height: 42px;
-    }
-    .logo span {
-        font-size: 22px;
-        font-weight: 600;
-    }
-    .nav-main {
-        padding: 15px 40px;
-    }
+    padding: 40px;
+    font-size: 22px;
 }

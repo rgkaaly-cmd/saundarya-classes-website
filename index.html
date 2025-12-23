@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Saundarya Classes</title>
+
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -12,11 +14,19 @@
 
     <header class="navbar">
         <div class="nav-main">
+
+            <!-- LOGO -->
             <div class="logo">
-                <img src="logo.png" alt="Logo">
-                <span>Saundarya Classes</span>
+                <svg class="logo-icon" viewBox="0 0 64 64" aria-hidden="true">
+                <polygon points="32 6 2 20 32 34 62 20 32 6"></polygon>
+                <rect x="22" y="34" width="20" height="10" rx="2"></rect>
+                <line x1="62" y1="20" x2="62" y2="36"></line>
+                <circle cx="62" cy="38" r="3"></circle>
+            </svg>
+                <span>Saundarya <b>Classes</b></span>
             </div>
 
+            <!-- MENU -->
             <nav class="menu">
                 <a class="active" href="#">Home</a>
                 <a href="#">Courses</a>
@@ -26,19 +36,20 @@
                 <a href="#">Contact Us</a>
             </nav>
 
+            <!-- RIGHT -->
             <div class="right">
                 <div class="search">🔍 Search</div>
                 <button class="enroll">Enroll Now</button>
+
+                <!-- HAMBURGER -->
+                <div class="hamburger" onclick="toggleMenu()">
+                    <span></span><span></span><span></span>
+                </div>
             </div>
 
-            <!-- Hamburger for mobile -->
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
         </div>
 
+        <!-- BOTTOM BAR -->
         <div class="nav-bottom">
             <div class="bottom-box">
                 🔍 <span>Search</span> | 🔔 <span>Notifications</span> ⌄
@@ -47,9 +58,10 @@
     </header>
 
     <section class="demo">
-        Scroll karke dekho — navbar fixed rahega 🔥
+        Scroll karke dekho — navbar fixed + animated 🔥
     </section>
 
+    <!-- JS -->
     <script src="script.js"></script>
 </body>
 
