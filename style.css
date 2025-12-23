@@ -1,0 +1,145 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Segoe UI, Arial, sans-serif;
+    background: #f2f5fa;
+    padding-top: 110px;
+}
+
+
+/* ===== NAVBAR ===== */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+    background: linear-gradient(180deg, #1f4f8b, #0f2f57);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, .35);
+}
+
+
+/* MAIN BAR */
+
+.nav-main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 45px;
+}
+
+
+/* LOGO */
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 26px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.logo img {
+    height: 42px;
+    width: auto;
+    object-fit: contain;
+}
+
+.logo span {
+    color: #ffcc33;
+}
+
+
+/* MENU */
+
+.menu a {
+    color: #fff;
+    margin: 0 18px;
+    text-decoration: none;
+    font-size: 17px;
+    position: relative;
+}
+
+.menu a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 0;
+    height: 3px;
+    background: #ffcc33;
+    transition: .3s;
+}
+
+.menu a:hover::after,
+.menu a.active::after {
+    width: 100%;
+}
+
+
+/* RIGHT */
+
+.right {
+    display: flex;
+    align-items: center;
+}
+
+.search {
+    color: #fff;
+    margin-right: 20px;
+    font-size: 16px;
+}
+
+.enroll {
+    padding: 12px 28px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    color: #7a3d00;
+    background: linear-gradient(180deg, #ffb347, #ffcc33);
+    box-shadow: 0 6px 18px rgba(255, 180, 60, .9);
+}
+
+.enroll:hover {
+    box-shadow: 0 8px 26px rgba(255, 180, 60, 1);
+}
+
+
+/* SECOND BAR */
+
+.nav-bottom {
+    background: #0c2a4a;
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px 45px;
+}
+
+.bottom-box {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    background: rgba(255, 255, 255, .08);
+    padding: 8px 18px;
+    border-radius: 8px;
+}
+
+.bottom-box span {
+    margin: 0 10px;
+    opacity: .9;
+}
+
+
+/* DEMO SECTION */
+
+.demo {
+    height: 1200px;
+    padding: 40px;
+    font-size: 22px;
+}
