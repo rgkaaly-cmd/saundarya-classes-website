@@ -10,26 +10,23 @@ body {
 }
 
 
-/* ===== NAVBAR ===== */
+/* NAVBAR */
 
 .navbar {
     position: fixed;
     top: 0;
-    left: 0;
     width: 100%;
     z-index: 9999;
     background: linear-gradient(180deg, #1f4f8b, #0f2f57);
     box-shadow: 0 12px 30px rgba(0, 0, 0, .35);
 }
 
-
-/* MAIN BAR */
-
 .nav-main {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 18px 45px;
+    position: relative;
 }
 
 
@@ -142,4 +139,80 @@ body {
     height: 1200px;
     padding: 40px;
     font-size: 22px;
+}
+
+
+/* HAMBURGER */
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 6px;
+}
+
+.hamburger span {
+    display: block;
+    width: 28px;
+    height: 3px;
+    background: #fff;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+
+/* MOBILE RESPONSIVE */
+
+@media (max-width: 768px) {
+    .menu,
+    .right {
+        display: none;
+    }
+    .hamburger {
+        display: flex;
+    }
+    .menu.active {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: #1f4f8b;
+        padding: 20px 0;
+        transition: all 0.3s ease;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    }
+    .menu.active a {
+        margin: 12px 0;
+        text-align: center;
+        font-size: 18px;
+    }
+}
+
+
+/* BODY BACKGROUND ANIMATION */
+
+body {
+    margin: 0;
+    font-family: Segoe UI, Arial, sans-serif;
+    padding-top: 110px;
+    background: linear-gradient(-45deg, #1f4f8b, #0f2f57, #38bdf8, #0c2a4a);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+}
+
+
+/* Animation keyframes */
+
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
